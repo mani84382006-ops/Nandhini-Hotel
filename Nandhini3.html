@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nandhini Biryani</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+color:white;
+
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("Biryani.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+/* HEADER TITLE */
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+font-size:36px;
+font-weight:bold;
+letter-spacing:2px;
+text-shadow:2px 2px 10px orange;
+}
+
+/* HERO TEXT */
+
+.hero{
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+font-size:40px;
+font-weight:bold;
+}
+
+/* MENU */
+
+.menu{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+padding:20px;
+}
+
+.card{
+background:#222;
+width:250px;
+margin:15px;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.price{
+color:orange;
+font-size:18px;
+margin:5px;
+}
+
+/* ORDER BOX */
+
+.order-box{
+background:#222;
+padding:20px;
+margin:30px auto;
+width:300px;
+border-radius:10px;
+text-align:center;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:red;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:darkred;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:15px;
+background:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Nandhini Biryani Restaurant
+</header>
+
+<div class="hero">
+Best Biryani in Town
+</div>
+
+<div class="menu">
+
+<div class="card">
+<img src="chicken.jpg">
+<h3>Chicken Biryani</h3>
+<p class="price">₹200</p>
+</div>
+
+<div class="card">
+<img src="chilli.jpg">
+<h3>Chilli Chicken</h3>
+<p class="price">₹180</p>
+</div>
+
+<div class="card">
+<img src="mutton.jpg">
+<h3>Mutton Biryani</h3>
+<p class="price">₹300</p>
+</div>
+
+<div class="card">
+<img src="egg.jpg">
+<h3>Egg Biryani</h3>
+<p class="price">₹150</p>
+</div>
+
+</div>
+
+<div class="order-box">
+
+<h3>Order Now</h3>
+
+<select id="item">
+<option>Chicken Biryani</option>
+<option>Chilli Chicken</option>
+<option>Mutton Biryani</option>
+<option>Egg Biryani</option>
+</select>
+
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="text" id="address" placeholder="Address">
+<input type="number" id="qty" placeholder="Quantity">
+
+<br><br>
+
+<label>
+<input type="checkbox" id="confirm"> Confirm Order
+</label>
+
+<br><br>
+
+<button onclick="sendOrder()">Order via WhatsApp</button>
+
+</div>
+
+<footer>
+© 2026 Nandhini Biryani
+</footer>
+
+<script>
+
+function sendOrder(){
+
+let item=document.getElementById("item").value;
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+let qty=document.getElementById("qty").value;
+let confirm=document.getElementById("confirm").checked;
+
+if(!confirm){
+alert("Please confirm your order");
+return;
+}
+
+let msg="Hello Nandhini Biryani%0A"
++"Item: "+item+"%0A"
++"Name: "+name+"%0A"
++"Phone: "+phone+"%0A"
++"Address: "+address+"%0A"
++"Qty: "+qty;
+
+window.open("https://wa.me/918438366136?text="+msg);
+
+}
+
+</script>
+
+</body>
+</html>
